@@ -17,15 +17,13 @@ Park.prototype.removeDinosaur = function(dinosaur){
 };
 
 Park.prototype.popularDinosaur = function(){
-  let largest = 0;
-  let popularDino = "";
+  let largest = this.dinosaurs[0];
   for (dinosaur of this.dinosaurs){
-    if (dinosaur.guestsAttractedPerDay > largest){
-      largest = dinosaur.guestsAttractedPerDay;
-      popularDino = dinosaur.species;
+    if (dinosaur.guestsAttractedPerDay > largest.guestsAttractedPerDay){
+      largest = dinosaur
     }
   }
-  return popularDino;
+  return largest;
 };
 
 Park.prototype.findBySpecies = function(species){
